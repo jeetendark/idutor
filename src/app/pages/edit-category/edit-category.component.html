@@ -1,0 +1,49 @@
+
+<nb-card class="col-md-8" style="margin: 0 auto">
+  <nb-card-header>
+    Edit Category
+  </nb-card-header>
+  <nb-card-body>
+<form class="text-center" [formGroup]="EditCategoryForm" (ngSubmit)="onSubmit()">
+  <div class="form-row mb-4">
+    <div class="col-lg-12">
+      <div class="custom_toggle">
+        <h5>Status</h5>
+        <label class="switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+          <span class="inactive">Inactive</span>
+          <span class="active">active</span>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <label for="">Category<sup>*</sup></label>
+      <input type="text" id="" class="form-control" placeholder="Category" formControlName="name">
+    </div>
+    <!-- <div class="col-md-12">
+      <label for="Contact">Subcategory<sup>*</sup></label>
+      <input type="text" id="Contact" class="form-control" placeholder="Subcategory" formControlName="subcat">
+    </div> -->
+    <div class="custom-file col-md-12 mb-4">
+      <b for="email">Category Image<sup>*</sup></b>
+      <div class="upload_img d-flex">
+        <!-- <img [src]='url' style="max-width: 150px;" class="mr-3"> -->
+        <span class="mr-3"><img  class="thumbnail-image" [src]='url'
+          onerror="this.src='assets/images/logo.jpg';"  alt="Upload" style="max-width: 100%;"/></span>
+        <input type="file" class="custom-file-input" id="importFile"  (change)="onSelectFile($event)">
+        <label style="width:100%" class="custom-file-label" for="importFile">Upload Image</label>
+      </div>
+
+      </div>
+      <div class="col-md-12 mt-5">
+        <button class="my-4 mr-2 btn btn-success" type="submit" [disabled]="!EditCategoryForm.valid"
+        (click)="updateCategory()">Save</button>
+        <button class="my-4 btn btn-iudtor" type="button" routerLink="/pages/category">Close</button>
+      </div>
+  </div>
+
+
+</form>
+</nb-card-body>
+</nb-card>

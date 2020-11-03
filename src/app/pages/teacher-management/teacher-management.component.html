@@ -1,0 +1,49 @@
+<nb-card>
+  <nb-card-header>
+    Teacher Management
+  </nb-card-header>
+  <nb-card-body>
+    <label class="search-label mr-3" for="search">Search:</label>
+    <input nbInput id="search" class="search-input">
+    <div class="add_teacher">
+      <button class="btn btn-iudtor" routerLink="/pages/add-teacher"><i class="fas fa-plus mr-2"></i>Add Teacher</button>
+    </div>
+    <div class="table-responsive mt-3">
+      <table class="table ">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">Name</th>
+            <th scope="col">Specialization</th>
+            <th scope="col">Experience/Years</th>
+            <th scope="col">Contact Details</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let teacher of teachers">
+            <td>
+              <!-- <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + teacher.image" class="mr-2" style="width: 20px"> -->
+              <div class="d-flex align-items-center">
+                <span class="mr-2 stud_img"><img [src]="teacher.teachImg" alt="teacher Image" class="img-fluid"></span>
+                <p class="m-0"> <b>{{ teacher.name }}</b>
+                </p>
+              </div>
+
+            </td>
+            <td>{{teacher.specialization}}</td>
+            <td>{{teacher.experience}}</td>
+            <td>{{teacher.email}} <br> {{ teacher.contact}}</td>
+            <td>{{ teacher.status}}</td>
+            <td>
+              <button class="btn btn-primary mr-2" title="View" routerLink="/pages/view-teacher-detail"><i class="far fa-eye"></i></button>
+          <button class="btn btn-warning mr-2" title="Edit" routerLink="/pages/edit-teacher"><i class="fas fa-user-edit"></i></button>
+          <button class="btn btn-danger" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

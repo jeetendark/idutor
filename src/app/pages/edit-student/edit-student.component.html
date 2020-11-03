@@ -1,0 +1,93 @@
+
+<nb-card>
+  <nb-card-header>
+    Update Student Details
+  </nb-card-header>
+  <nb-card-body>
+<form class="text-center" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+  <div class="form-row mb-4">
+    <div class="col-lg-12">
+      <div class="custom_toggle">
+        <label class="switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+          <span class="inactive">Inactive</span>
+          <span class="active">active</span>
+        </label>
+      </div>     
+  </div>
+    <div class="col-md-4">
+      <label for="">Name <sup>*</sup></label>
+      <input type="text" id="" class="form-control" placeholder="Name" formControlName="name">
+    </div>
+    <div class="col-md-4">
+      <label for="Contact">Contact<sup>*</sup></label>
+      <input type="text" id="Contact" class="form-control" placeholder="Contact" formControlName="contact">
+    </div>
+    <div class="col-md-4">
+      <label for="email">Email<sup>*</sup></label>
+      <input type="text" id="email" class="form-control" placeholder="Email" formControlName="email">
+    </div>
+    <div class="col-md-4">
+      <label for="gender">Gender</label>
+        <nb-select id="gender" class="form-control" placeholder="Gender"
+        formControlName="gender" [(selected)]="selectedItem">
+          <nb-option value="female">Female</nb-option>
+          <nb-option value="male">Male</nb-option>         
+        </nb-select>
+    </div>
+    <div class="col-md-4">
+      <label for="dob">Date of Birth</label>
+      <!-- <input type="text" id="dob" class="form-control" placeholder="Date of Birth"
+        formControlName="dob"> -->
+        <input nbInput id="dob" placeholder="Pick Date" id="dob" class="form-control" placeholder="Date of Birth"
+        formControlName="dob" [nbDatepicker]="dateTimePicker">
+        <nb-datepicker #dateTimePicker></nb-datepicker>
+    </div>
+    <div class="col-md-4">
+      <label for="age">Age</label>
+      <input type="text" id="age" class="form-control" placeholder="Age"
+        formControlName="age">
+    </div> 
+    <!-- <div class="custom-file col-md-6">
+      <b for="email">Student Image<sup>*</sup></b>
+        <input type="file" class="custom-file-input" multiple formControlName="importFile" id="importFile" (change)="onFileChange($event.target.files)">
+        <label style="width:100%" class="custom-file-label" #labelImport for="importFile">Upload New Image</label>
+      </div> -->
+  </div>
+
+  <div formGroupName="address" class="text-left mt-5">
+    <h5 class="m-0 sec_heading">Address</h5>
+    <div class="row">
+      <div class="col-md-6"> <label style="width:100%" class="mt-0">
+          Street
+        </label>
+        <input type="text" class="form-control" placeholder="Street" formControlName="street">
+      </div>
+      <div class="col-md-6"> <label style="width:100%" class="mt-0">
+          City
+        </label>
+        <input type="text" class="form-control" placeholder="City" formControlName="city">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6"> <label style="width:100%">
+          State
+        </label>
+        <input type="text" class="form-control" placeholder="State" formControlName="state">
+      </div>
+      <div class="col-md-6"> <label style="width:100%">
+          Zip Code
+        </label>
+        <input type="text" class="form-control" placeholder="Zip Code" formControlName="zip">
+      </div>
+    </div>
+  </div>
+  <div class="nb_footer mt-4">
+  <button class="mt-4 mr-3"
+    (click)="updateDetails()" nbButton status="success">Update</button>
+    <button class="mt-4" routerLink="/pages/students" nbButton status="danger">Cancel</button>
+</div>
+</form>
+</nb-card-body>
+</nb-card>

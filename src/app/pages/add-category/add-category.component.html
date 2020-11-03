@@ -1,0 +1,30 @@
+
+<nb-card class="col-md-6" style="margin: 0 auto">
+  <nb-card-header>
+    Add New Category
+  </nb-card-header>
+  <nb-card-body>
+<form class="text-center" [formGroup]="addCategoryForm" (ngSubmit)="onSubmit()">
+  <div class="form-row mb-4">
+    <div class="col-md-12">
+      <label for="">Category<sup>*</sup></label>
+      <input type="text" id="" class="form-control" placeholder="Category" formControlName="name">
+    </div>
+    <div class="col-md-12">
+      <label for="Contact">Subcategory<sup>*</sup></label>
+      <input type="text" id="Contact" class="form-control" placeholder="Subcategory" formControlName="contact">
+    </div>
+    <div class="custom-file col-md-12 mb-4">
+      <b for="email">Category Image<sup>*</sup></b>
+        <input type="file" class="custom-file-input" multiple formControlName="importFile" id="importFile" (change)="onFileChange($event.target.files)">
+        <label style="width:100%" class="custom-file-label" #labelImport for="importFile">Upload Image</label>
+      </div>
+  </div>
+  <!-- Sign up button -->
+  <button class="my-4 mr-2 btn btn-success" type="submit" [disabled]="!addCategoryForm.valid"
+    (click)="addDetails()">Save</button>
+    <button class="my-4 btn btn-iudtor" type="button" routerLink="/pages/category">Close</button>
+
+</form>
+</nb-card-body>
+</nb-card>

@@ -1,0 +1,49 @@
+<nb-card>
+  <nb-card-header>
+    List of categories
+  </nb-card-header>
+  <nb-card-body>
+    <label class="search-label mr-3" for="search">Search:</label>
+    <input nbInput id="search" class="search-input">
+    <div class="add_teacher">
+      Sort by Status:
+      <nb-select placeholder="" [(selected)]="selectedItem" style="min-width: 115px;">
+        <nb-option value="1">Active</nb-option>
+        <nb-option value="2">Inactive</nb-option>
+      </nb-select>
+      <button class="btn btn-iudtor ml-3" routerLink="/pages/add-category"><i class="fas fa-plus mr-2"></i>Add
+        Category</button>
+    </div>
+    <div class="table-responsive mt-3">
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">Category</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categories">
+            <td>
+              <!-- <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + student.image" class="mr-2" style="width: 20px"> -->
+              <div class="d-flex align-items-center">
+                <span class="mr-2 stud_img"><img [src]="category.studImg" alt="student Image" class="img-fluid"></span>
+                <p class="m-0"> <b>{{ category.cat_name }}</b></p>
+              </div>
+
+            </td>
+            <td>{{ category.status}}</td>
+            <td>
+              <button class="btn btn-warning mr-2" title="Edit" routerLink="/pages/edit-category"><i
+                  class="fas fa-user-edit"></i></button>
+              <button class="btn btn-danger" title="Delete" routerLink="/pages/dashboard"><i
+                  class="fas fa-trash-alt"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

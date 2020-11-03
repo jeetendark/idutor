@@ -1,0 +1,151 @@
+/* ProfileEditorComponent's private CSS styles */
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+label ,.custom-file b{
+  display: block;
+  width: 100%;
+  margin: 1em 0 .5em;
+  color: #607D8B;
+  font-weight: bold;
+  text-align: left;
+}
+.custom-file label{
+  font-weight: normal;
+}
+.custom-file-input {
+  position: absolute;
+  left: 0;
+}
+.custom-file-label {
+  position: relative;
+  margin: 0;
+}
+input {
+  height: 2.5em;
+  font-size: 1em;
+  padding-left: .4em;
+}
+
+button {
+  
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  &.btn{
+    padding: 0.3em 1.5em;
+  }
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.switch {
+  display: inline-block;
+  height: 28px;
+  position: relative;
+  width: 55px;
+}
+
+.switch input {
+display:none;
+}
+
+.slider {
+background-color:#323838;
+bottom: 0;
+cursor: pointer;
+left: 0;
+position: absolute;
+right: 0;
+top: 0;
+transition: .4s;
+}
+
+.slider:before {
+background-color: #fff;
+bottom: 4px;
+content: "";
+height: 20px;
+left: 4px;
+position: absolute;
+transition: .4s;
+width: 20px;
+}
+
+input:checked + .slider {
+background-color: #fda601;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+.nb_footer{
+  border-top: 1px solid #ccc;
+}
+.custom_toggle {
+width: 300px;
+float: right;
+text-align: center;
+    /* border: 1px solid #edf1f7; */
+    // box-shadow: 0px 0px 2px 1px #efeaea;
+    // border-radius: 5px;
+}
+.custom_toggle h5 {
+margin: 0;
+font-size: 20px !important;
+color: #faaa0d;
+font-weight: normal;
+}
+.custom_toggle span.active {
+position: absolute;
+right: -60px;
+top: 5px;
+text-transform: capitalize;
+opacity: 0.3;
+}
+
+.custom_toggle span.inactive {
+position: absolute;
+left: -75px;
+top: 5px;
+}
+input:checked + .slider + .inactive{
+opacity: 0.3;
+}
+input:checked + .slider + .inactive +.active{
+color: #fda601; opacity: 1;
+}
+.btn-iudtor{
+  background-color: #fda601;
+  color: #fff;
+  font-weight: 500;
+}
+sup{
+  color: red
+}

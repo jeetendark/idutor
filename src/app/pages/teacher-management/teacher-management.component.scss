@@ -1,0 +1,45 @@
+button {
+    padding: 0px 5px !important;
+    font-size: 12px !important;
+
+}
+td {
+    div{
+        text-transform: capitalize;
+        .stud_img {
+            max-width: 35px;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 50%;
+    }
+  
+}
+}
+.btn-iudtor{
+    background-color: #fda601;
+    padding: 0.5em 1.5em!important;
+    font-size: 15px!important;
+    font-weight: 600!important;
+    color: #fff;
+  }
+  .add_teacher {
+    position: absolute;
+    right: 25px;
+    top: 18px;
+}
+
+.status_danger{
+    color: #b81d5b;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .status_success{
+    color: #00997a;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .status_pending{
+    color: #ffaa00;
+    font-weight: 600;
+    font-size: 12px;
+  }
